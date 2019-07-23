@@ -1,0 +1,35 @@
+$nav-height: 65px;
+
+.global-header {
+    background-color: $primaryBlue;
+    color: white;
+
+    nav {
+        display: flex;
+        height: $nav-height;
+        align-items: center;
+
+        .title {
+            font-size: 16px;
+        }
+    }
+
+    .nav-menu {
+        height: 25px;
+        width: 24px;
+        margin-right: 10px;
+        cursor: pointer;
+        text-indent: -9999px;
+    }
+
+    .nav-search {
+
+        margin-left: auto;
+    }
+
+    .nav-dashboard {
+
+        margin-left: 30px;
+    }
+}
+

@@ -1,0 +1,152 @@
+@import 'modals'; 
+@import 'icons';  
+@import 'forms';  
+@import 'buttons'; 
+@import 'headings'; 
+@import 'calendar'; 
+@import 'global-header'; 
+@import 'slide-menu'; 
+
+
+body {
+    font-family: 'ApercuPro-Light';
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    color: $black;
+}
+.container {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: relative;
+    @media (max-width: 1200px) {
+        padding-left: 15px;
+        padding-right: 15px;
+        /*width: 1200px;*/
+    }
+}
+a {
+    color: $primaryBlue;
+    @include hoverEffect;
+    &:hover {
+        opacity: 0.8;
+    }
+    &:focus, &:hover {
+        color: $primaryBlue;
+        text-decoration: none;
+    }
+    &.cta-link {
+        color: $primaryPink;
+    }
+}
+hr {
+    border-top: 1px solid $borderGray;
+}
+.highlight {
+    color: $primaryPink;
+}
+.disabled {
+    pointer-events: none;
+}
+.subtitle {
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+}
+.price-old {
+    text-decoration: line-through;
+    margin-right: 5px;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &.inline-list {
+        display: inline-block;
+        & > li {
+            float: left;
+            &:after {
+                content: '|';
+                margin: 0 10px;
+            }
+            &:last-child:after {
+                display: none;
+            }
+        }
+    }
+}
+table {
+    width: 100%;
+}
+select {
+    background: none;
+    border: none;
+    outline: none;
+}
+.strong {
+    font-weight: $font-weight-bold;
+}
+.img-wrapper {
+    background-position: center 0;
+    background-size: cover;
+}
+.carousel {
+    .carousel-inner {
+        margin: auto;
+    }
+    .carousel-control {
+        background: none;
+        width: 60px;
+        .arrow {
+            background: url("/images/2019/icons/arrow_carousel.png");
+            @include image-2x("/images/2019/icons/arrow_carousel@2x.png", 32px, 60px);
+            @include vertical-align;
+            width: 32px;
+            height: 60px;
+            &.next {
+                left: 0px;
+            }
+            &.prev {
+                right: 0px;
+                transform: translateY(-50%) rotate(180deg) ;
+            }
+        }
+    }
+}
+.highlight-tag {
+    background-color: $primaryPink;
+    font-family: 'ApercuPro-Regular';
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 22px;
+    padding: 0 8px;
+    color: white;
+    text-align: center;
+
+    &.highlight-1 {
+        background-color: $purple;
+    }
+    &.highlight-2 {
+        background-color: $bgGray;
+        color: $textGray;
+    }
+    &.highlight-3 {
+        background-color: $errorRed;
+    }
+}
+.dropdown {
+    padding-right: 15px;   
+    .dropdown-toggle {
+        cursor: pointer;
+    }
+    .caret {
+        color: $primaryBlue;
+        @include vertical-align;
+        right: 0;
+    }
+}
+footer {
+    font-size: 13px;
+    padding: 20px 0;
+}  

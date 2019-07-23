@@ -1,0 +1,49 @@
+%base-button {
+    font-family: 'ApercuPro-Regular';
+    text-transform: uppercase;
+    border: none;
+    @include hoverEffect();
+    outline: none;
+    background-color: white;
+    color: white;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+
+    &.sm {
+        font-family: 'ApercuPro-Bold';
+        font-size: 10px;
+        line-height: 22px;
+        border-radius: 11.5px;
+        padding: 0 15px;
+    }
+
+    &.md {
+        padding: 0 25px;
+        font-size: 13px;
+        line-height: 44px;
+        border-radius: 22px;
+    }
+}
+
+.btn-mainBlue {
+    @extend %base-button;
+    background-color: $primaryBlue;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.btn-white {
+    @extend %base-button;
+    color: $primaryBlue;
+    border: 1px solid $primaryBlue;
+    &:hover {
+        background-color: $lightBlue;
+    }
+}
+
+.btn-blue {
+    @extend %base-button;
+    border: 1px solid $btnBlue;
+    background-color: $btnBlue; 
+}

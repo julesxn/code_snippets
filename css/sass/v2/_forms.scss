@@ -1,0 +1,268 @@
+$form-width-1: 220px;
+$form-width-2: 145px;
+$form-width-3: 180px;
+$form-width-4: 105px;
+$form-width-5: 300px;
+$form-width-6: 640px;
+$form-width-7: 330px;
+$form-width-8: 80px;
+$form-width-9: 556px;
+$form-width-10: 445px;
+
+.form-width-1 { width: $form-width-1; }
+.form-width-2 { width: $form-width-2; }
+.form-width-3 { width: $form-width-3; }
+.form-width-4 { width: $form-width-4; }
+.form-width-5 { width: $form-width-5; }
+.form-width-6 { width: $form-width-6; }
+.form-width-7 { width: $form-width-7; }
+.form-width-8 { width: $form-width-8; }
+.form-width-9 { width: $form-width-9; }
+.form-width-10 { width: $form-width-10; }
+
+
+fieldset {
+    width: 450px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+label {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 0;
+    font-weight: $font-weight-light;
+    cursor: pointer;
+    @include hoverEffect;
+}
+
+.form-group  {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 0;
+    text-align: left;
+
+    .form-control {
+        padding: 10px;
+        border: 1px solid $formGray;
+        border-radius: 5px;
+        box-shadow: none;
+        position: relative;
+        z-index: 1;
+        resize: none; 
+        color: $black;
+        font-size: 15px;
+        letter-spacing: 0.4px;
+        height: 44px;
+
+        &:focus {   
+            border: 1px solid $primaryPink;
+            -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);  
+            -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+        }
+
+        &.no-label {
+            padding: 10px !important;
+        }
+
+/*        &.error,
+        &.input-error {
+            border: 1px solid $errorRed;
+            background-color: #ffefef; 
+        }*/
+    }
+
+    ::-webkit-input-placeholder { color: $textGray; }  
+    :-moz-placeholder { color: $textGray; }
+    ::-moz-placeholder { color: $textGray; }
+    :-ms-input-placeholder { color: $textGray; }
+
+
+    select,
+    input {
+        height: 44px;
+    }
+
+    textarea {
+        min-height: 160px;
+        resize: vertical !important;
+    }
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: 
+            linear-gradient(45deg, transparent 50%, #666 50%), 
+            linear-gradient(135deg, #666 50%, transparent 50%);
+        background-position: 
+            calc(100% - 20px) calc(1em + 4px), 
+            calc(100% - 15px) calc(1em + 4px);
+        background-size: 5px 5px, 5px 5px, 1px 1.5em;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    label {
+        opacity: 0;
+        z-index: 10;
+        display: block;
+        font-size: 9px;
+        font-weight: 200;
+        line-height: normal;
+        text-transform: uppercase;
+        position: absolute;
+        top: 7px;
+        left: 10px;
+        color: $textGray;
+        -webkit-transition: all 200ms ease-in-out;
+                transition: all 200ms ease-in-out;
+    }
+
+    &.price-adjust {
+        .form-control {
+            text-align: right;
+        }
+        .currency {
+            @include vertical-align;
+            left: 10px;
+            z-index: 1;
+        }   
+    }
+
+    &.floating-label-form-group-with-value {
+        label {
+            opacity: 1;
+        }
+        .form-control {
+            padding: 16px 10px 4px;
+        } 
+    }
+
+    &.floating-label-form-group-with-focus {
+        .form-control {
+            padding: 16px 10px 4px;
+        }
+        label {
+            color: $textGray;
+            opacity: 1;
+        }
+    }
+
+/*    &.form-error {
+        .form-control {
+            border: 1px solid $errorRed !important;
+            background-color: orange !important;
+        }
+        &.floating-label-form-group-with-focus {
+            border: none !important;
+            label {
+                color: $errorRed !important;   
+            }
+        }
+    }*/
+}
+
+.radio-btn {
+    &.sm {
+        label {
+            position: relative;
+            padding-left: 25px;
+            .radio {
+                width: 16px;
+                height: 16px;
+                cursor: pointer;
+                -moz-border-radius: 50%;
+                border-radius: 50%;  
+                margin: auto;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;    
+                background: white;
+                border: 1px solid #979797;
+            }
+        }
+        input:checked + label {
+            background-color: transparent;
+            border: none;
+            .radio {
+                background-color: $primaryPink;
+                box-shadow: 0 0 0 1px #979797;
+                border: 2px solid white;
+            }
+        }
+        input + label .radio,
+        input:checked + label .radio {
+            -webkit-transition:background-color 0.2s linear;
+            -o-transition:background-color 0.2s linear;
+            -moz-transition:background-color 0.2s linear;
+            transition:background-color 0.2s linear;
+        }
+    }
+}
+
+
+.checkbox-wrapper {
+    margin-top: 15px;
+
+    .checkbox-radio + label .check {
+        background-color: white;
+        border: 1px solid $formGray;
+        border-radius: 3px;
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: -2px 4px 0 0;
+        position: relative;
+    }
+
+    .checkbox-radio:checked + label .check {
+        border: 1px solid $primaryPink;
+        &:after  {
+            content: '';
+            background: url('/images/2019/icons/icon_checkmark_pink.png') no-repeat;
+            background-size: 13px auto;
+            @include vertical-align;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 13px;
+            height: 10px;
+            @include image-2x("/images/2019/icons/icon_checkmark_pink@2x.png", 13px, 10px);
+        }
+    }
+   
+}
+
+.image-upload-wrapper {
+    text-align: center;
+    border-radius: 5px;
+    border: 1px dashed $formGray;
+    position: relative;
+    height: 180px;
+    .copy {
+        @include vertical-align;
+        position: relative;
+        .icon.image-upload {
+            margin: 0 auto 15px;
+        }
+    }
+    .fileupload {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        cursor: pointer;
+        opacity: 0; 
+        z-index: 1;
+    }
+}

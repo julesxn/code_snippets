@@ -1,0 +1,125 @@
+@import 'v2/mixins'; 
+@import 'v2/variables'; 
+
+.menu-nav-wrapper {
+    &.c-menu--slide-left {
+        width: 355px;
+        overflow: auto;   
+    }
+
+    .arrow-back {
+        position: absolute;
+        top: 40px;
+        left: 45px;
+    }
+
+    .panel-group {
+        margin: 0;    
+        .panel {
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+            margin: 0;
+        }
+        .panel-body {
+            padding: 5px 45px 20px;
+            text-align: left;
+            margin-bottom: 15px;
+            border: none !important;
+            border-bottom: 1px solid $borderGray !important;
+            .links {
+                &.sub {
+                    margin-top: 10px;
+                }
+                li {
+                    padding: 10px 0;
+                }
+                a {
+                    font-family: 'ApercuPro-Regular';
+                    &:hover {
+                       color: $bgBlue;
+                    }
+                }
+            }
+        }
+    }
+
+    .accordion-parent {
+        padding-top: 90px;
+        .panel-heading {
+            border-radius: 0;
+            text-align: left;
+            font-weight: $font-weight-bold;
+            cursor: pointer;
+            padding: 0;
+
+            a {
+                font-size: 20px;
+                padding: 13px 45px;
+                display: block;
+                color: #fff;
+                background-color: $primaryBlue;
+
+                &.collapsed {
+                    color: $primaryBlue;
+                    background-color: #fff;
+                    &:hover {
+                        background-color: $primaryBlue;
+                        color: white;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .accordion-child {
+        .caret {
+            @include vertical-align;
+            right: 0;
+            border-top: 0;
+            border-bottom: 4px dashed;
+        }
+        .heading-link {
+            display: block;
+            position: relative;
+            text-transform: uppercase;
+            &.collapsed {
+                .caret {
+                    border-bottom: 0;
+                    border-top: 4px dashed;
+                }
+            }
+        }
+        .panel-body {
+            border: none !important;
+            margin: 0;
+            padding: 0 20px;
+            .links {
+                padding: 0;
+                li:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .sign-in {
+        background-color: $bgGray;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: left;
+        padding: 30px 45px;
+        word-break: break-word;
+        p {
+            font-size: 18px;
+            line-height: 26px;
+                font-family: 'ApercuPro-Regular';
+        }
+        a {
+            color: $primaryPink;
+            display: block;
+        }
+    }
+}
