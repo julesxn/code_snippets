@@ -1,0 +1,553 @@
+@import "../variables";
+@import "../rb-variables";
+
+/*cymk: 93 86 11 24*/
+$link-blue: #2b3575;
+$page-width: 360pt;
+
+@media print {
+    @page {
+        size: 6in 17in;
+    }
+}
+
+/*vertical-align*/
+%vertical-align {
+    position: relative;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.print_pg {
+    height: 1224pt; /*17in*/
+    width: $page-width;
+    margin: auto;
+    &.back {
+        padding-top: 30pt;
+        position: relative;   
+    }
+    .block {
+        position: relative;
+        height: 408pt;
+
+        &.top {
+            width: 315pt;
+            margin: auto;
+        }
+    }
+}
+
+#cookies-banner {
+    display: none !important;
+}
+
+#personalized-instructions {
+    width: auto;
+    padding: 0;
+    .title {
+        font-family: $font-family-canela;
+        text-transform: none;
+    }
+    .content {
+        .tip {
+            margin-bottom: 5pt;
+            color: $link-blue;
+            font-style: italic;
+        }
+        hr {
+            border-top: 1px solid $link-blue;
+            margin-top: 10pt;
+            margin-bottom: 10pt;
+        }
+        p, p a, ul li {
+            font-size: 9pt;
+            line-height: 14pt;
+            letter-spacing: 0.2pt;
+            font-weight: $font-weight-normal;
+            color: $link-blue;
+            margin: 0;
+        }
+        .title {
+            letter-spacing: 0;
+            margin-bottom: 12pt;
+            color: $link-blue;
+        }
+        .subhead {
+            font-size: 12pt;
+            line-height: 14pt;
+            letter-spacing: 0;
+            margin-bottom: 10px;
+            color: $link-blue;
+            &.highlight-tag {
+                padding: 4.5pt 10pt;
+                font-size: 11pt;
+                margin-bottom: 15px;
+                color: $link-blue;
+                background-color: #fdeced;
+            }
+        }
+        .bullet {
+            li {
+                margin-left: 15px;
+                margin-bottom: 3.5pt;
+                &:before {
+                    font-size: 20pt;
+                    line-height: 15pt;
+                    left: -15px;
+                }
+                &.bullet-detail {
+                    margin-bottom: 10px;
+                    &:before {
+                        font-size: 9pt;
+                        line-height: 12pt;
+                    }
+                }
+                &.non-bullet {
+                    margin-top: 20px;
+                }
+            }
+        }
+        .highlight {
+            color: $link-pink;
+            white-space: nowrap;
+        }
+        .info {
+            border-top: 1px solid $link-blue;
+            padding-right: 25pt;
+            text-align: left !important;
+            padding-top: 10pt;
+            position: absolute;
+            bottom: 24pt;
+        }
+    }
+    .page-title {
+        text-align: center;
+        .bg {
+            @extend %vertical-align;
+/*            background: url('/images/2018/instructions/colorSet_Instructions_Cover.png');
+            background-size: cover;
+            background-color: $link-blue;
+            padding-top: 18pt;*/
+            &:after {
+                content:'';
+                background-color: $link-blue;
+                padding-bottom: 8pt;
+                display: block;
+            }
+        }
+        .content-box {
+            background-color: white;
+            .title, h2, p {
+                color: $link-blue;
+            }
+            .title {
+                font-size: 38pt;
+                line-height: 42pt;
+                letter-spacing: 0.5pt;
+                padding: 45pt 0 0;
+                &:after {
+                    content: '';
+                    border-bottom: 2pt solid #f0617d;
+                    width: 35pt;
+                    display: block;
+                    margin: 10pt auto 15pt;
+                }
+            }
+            h2 {
+                font-size: 13pt;
+                line-height: 15pt; 
+                letter-spacing: 1.5pt;
+                margin-bottom: 34pt;
+                text-transform: uppercase;
+            }
+            p span {
+                text-transform: uppercase;
+            }
+        }
+        .client-info {
+            table {
+                width: 100%;
+            }
+        }
+    }
+    .guide-list {
+        border: none;
+        padding: 0;
+        margin: 0;
+        @extend %vertical-align; 
+
+        .title {
+            font-size: 21pt;
+            line-height: 24pt;
+        }
+        p {
+            margin-bottom: 30px;
+        }
+        ul {
+            margin: 0;
+            &:before {
+                display: none;
+            }
+            li {
+                margin: 10pt 0 30pt;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .numbered_list li {
+            margin: 25pt 50pt 25pt 0;
+            .number {
+                font-size: 14pt;
+                width: 32pt;
+                line-height: 32pt;
+                margin-right: 20px;
+                color: $link-blue;
+            }
+        }
+        .subhead:after {
+            top: -5px;
+        }
+    }
+    .step-by-step {
+        .title {
+            font-size: 18pt;
+            margin-bottom: 15pt;
+        }
+        .minutes {
+            width: 40pt;
+            height: 40pt;
+            p { 
+                font-size: 11pt; 
+                line-height: 12pt;
+            }
+        }
+        .step {
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+        }
+    }
+    .color-info {
+        border: none;
+        padding: 0;
+        @extend %vertical-align; 
+
+        &.ingredients {
+            p {
+                font-size: 8pt;
+                line-height: 11pt;
+            }
+            table {
+                height: 295px;
+                margin-bottom: 10pt;
+                td {
+                    padding: 15pt 0;
+                }
+            }
+            .copy p {
+                font-size: 7pt;
+            }
+            ul.kit-items li {
+                font-size: 8pt;
+                line-height: 13pt;
+            }
+            .subhead {
+                margin-top: 20px;
+            }
+        }
+        .subhead {
+            font-size: 10pt;
+            line-height: 11pt;
+            margin-bottom: 5pt;
+        }
+        .subtitle {
+            font-size: 13pt;
+            line-height: 14pt;
+            margin-bottom: 15px;
+            color: $link-blue;
+        }
+        table {
+            height: 480px;
+            width: 100%;
+            td {
+                /*border-top: 1px solid $link-blue;*/
+                /*border-bottom: 1px solid $link-blue;*/
+                padding: 30pt 0;
+                &.col-1 {
+                    padding-right: 9pt;
+                    border-right: 1px solid $link-blue;
+                }
+                &.col-2 {
+                    padding-left: 15pt;
+                }
+            }
+        }
+        ul.kit-items li {
+            line-height: 17pt;
+            margin-left: 15px;
+            &:before {
+                font-size: 16pt;
+                line-height: 17pt;
+            }
+        }
+        .adjustments {
+            position: absolute;
+            bottom: 30pt;
+            .highlight {
+                white-space: normal;
+            }
+        }
+    }
+    .color-chart {
+        margin-bottom: 15px;
+        min-height: 130px;
+        .color-list {
+            li {
+                font-family: $font-family-new;
+                margin-top: 10pt;
+                padding-left: 22px;
+                font-size: 8pt;
+                line-height: normal;
+                letter-spacing: 0.1pt;
+                width: 105px;
+                .color {
+                    width: 12pt;
+                    height: 7pt;
+                    position: absolute;
+                    left: 0;                    
+                }
+            }
+        }
+        $chart-width: 80pt;
+        $inner-chart-width: 58px;
+        svg, .chart {
+            width: $chart-width;
+            height: $chart-width;
+        }
+        .chart {
+            top: 25px;
+            .color-text {
+                width: $inner-chart-width;
+                height: $inner-chart-width;
+                line-height: $inner-chart-width;
+                font-size: 13pt;
+            }
+        }
+    }
+    .qr-code {
+        float: right;
+        margin-top: 30px;
+        svg {
+            width: 75%;
+            float: right;
+        }
+    }
+
+
+    /*CUSTOM COLOR*/
+    .custom-color {
+        .page-title {
+            .client-info {
+                background-color: #fdeced;
+                padding: 20pt 0;
+                table {
+                    td {
+                        width: 50%;
+                        vertical-align: top;
+                        padding: 0 20pt;
+                        text-align: left;
+                        &:first-child {
+                            border-right: 1px solid #2b3681;
+                        }
+                        p {
+                            font-size: 8pt;
+                            line-height: 10pt;
+                            font-weight: $font-weight-normal;
+                            margin-bottom: 10pt;
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .guide-list {
+            .col-1 {
+                width: 205px;
+            }
+        }
+        .step-by-step {
+            padding-bottom: 10pt;
+            .col-1 {
+                width: 92pt;
+            }
+            .col-2 {
+                width: 268pt;
+                float: right;
+            }
+            .hair-color-icon {
+                margin-top: -44px;
+                img {
+                    width: auto;
+                }
+            }
+            .minutes {
+                top: 0;
+                margin: 10px 0 8px 15px;
+            }
+        }
+    }
+
+    /* HIGHLIGHTS */
+    .highlights {
+        .page-title {
+            .bg:after {
+                display: none;
+            }
+            .content-box {
+                .title {
+                    margin-bottom: 35pt;
+                    &:after {
+                        display: none;
+                    }
+                }
+                p {
+                    font-size: 9pt;
+                    line-height: 13pt;
+                    letter-spacing: 0;
+                    font-family: $font-family-mono;
+                    margin-bottom: 10pt;
+                    &.highlight-tag {
+                        background-color: #FFE9EB;
+                        font-size: 12pt;
+                        line-height: 27pt;
+                        display: table;
+                        margin: 0 auto 50pt;
+                        padding: 0 15pt;
+                    }
+                }
+            }
+        }
+        .content {
+            .info {
+                color: $link-blue;
+            }
+        }
+        .color-info {
+            p {
+                margin-top: 10pt;
+            }
+            ul.kit-items {
+                margin-bottom: 20pt;
+            }
+            .main-logo {
+                display: block;
+            }
+            .video-block {
+                /*CYMK: 9-59-31-0*/
+                background-color: #e0838d; 
+                width: 144pt;
+                height: 144pt;
+                padding: 25pt 15pt;
+                position: relative;
+                margin: 20pt 0;
+                p {
+                    font-family: $font-family-mono;
+                    color: white;
+                    font-size: 11pt;
+                    line-height: 13pt;
+                    letter-spacing: 0;
+                    &:before {
+                        content: '';
+                        border-top: 1pt solid white;
+                        width: 10pt;
+                        display: block;
+                        margin-bottom: 10pt;
+                    }
+                }
+                .video-play {
+                    background-size: 24pt auto;
+                    width: 24pt;
+                    height: 24pt;
+                    position: absolute;
+                    bottom: 15pt;
+                    right: 15pt;
+                }
+            }
+            table {
+                height: auto;
+                td {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    border-top: none;
+                    border-bottom: none;
+                }
+            }
+        }
+        .guide-list {
+            .title {
+                margin-bottom: 25pt;
+            }
+            .col-1 {
+                width: 85pt;
+                padding-right: 10pt;
+            }
+        }
+        .step-by-step {
+            .title {
+                text-transform: none;
+            }
+            .col-1 {
+                width: 92pt;
+            }
+            .col-2 {
+                width: 268pt;
+                float: right;
+            }
+            .minutes {
+                top: 0;
+                margin: -5px 0 5px 25px;
+            }
+            .hair-highlight-icon {
+                position: relative;
+                margin-right: 15px;
+
+                img {
+                    margin: auto;
+                }
+
+                &.A img {
+                    width: 50pt;
+                    top: -126px;
+                }
+                &.B img {
+                    width: 71pt;
+                    top: -88px;
+                }
+                &.C img {
+                    width: 60pt;
+                    top: -30px;
+                }
+                &.D img {
+                    width: 50pt;
+                    top: -43px;
+                }
+                &.E img {
+                    width: 60pt;
+                    top: 26px;
+                }
+                &.F img {
+                    width: 80pt;
+                    top: 80px;
+                }
+                &.G img {
+                    width: 60pt;
+                    top: -43px;
+                }
+            }
+        }
+    }
+}

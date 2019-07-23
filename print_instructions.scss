@@ -1,0 +1,369 @@
+@import "../variables";
+@import "../rb-variables";
+
+/* STANDARD LETTER SIZE 8.5X11 */
+@media print {
+
+    @media (max-width: 767px) {
+        .hidden-xs {
+            display: block !important;
+        }
+        .visible-xs {
+            display: none !important;
+        }
+    }
+
+    @page {
+        size: 8.5in 11in;
+    }
+
+    .global-header,
+    .header-banner,
+    .main-nav,
+    .user-banner,
+    .file-options,
+    .account-breadcrumb,
+    .page-title p,
+    #chatWidget,
+    footer,
+    .client-info-wrapper,
+    .client-info,
+    .hidden-print,
+    #cookies-banner,
+    .language-toggle,
+    .color-info {
+        display: none !important;
+    }
+
+    #personalized-instructions {
+        $page-width: 345pt;
+        .print {
+            display: block !important;
+        }
+        .content {
+            margin: auto;
+            width: $page-width;
+            .tip,
+            .highlight,
+            .subhead,
+            .subtitle {
+                color: $color-3;
+            }
+            .tip {
+                margin-bottom: 5pt;
+            }
+            hr {
+                border-top: 1px solid $color-3;
+                margin-top: 10pt;
+                margin-bottom: 10pt;
+            }
+            p, p a, ul li {
+                font-size: 9pt;
+                line-height: 13pt;
+                letter-spacing: 0.2pt;
+                font-weight: $font-weight-normal;
+            }
+            .title {
+                font-size: 13pt;
+                line-height: 16pt;
+                letter-spacing: 0;
+                margin-bottom: 10pt;
+                font-weight: $font-weight-normal;
+            }
+            .subhead {
+                font-size: 9pt;
+                line-height: 11pt;
+                letter-spacing: 0;
+                &.highlight-tag {
+                    font-size: 10pt;
+                    margin-bottom: 15px;
+                }
+            }
+            .bullet {
+                li {
+                    margin-left: 15px;
+                    margin-bottom: 3.5pt;
+                    &:before {
+                        font-size: 16pt;
+                        line-height: 13pt;
+                        left: -15px;
+                    }
+                    &.bullet-detail {
+                        margin-bottom: 10px;
+                        &:before {
+                            font-size: 9pt;
+                            line-height: 12pt;
+                        }
+                    }
+                    &.non-bullet {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+        .page-title {
+            padding-bottom: 0;
+            margin-bottom: 15pt;
+            border-bottom: 1px solid $color-3;
+            .title {
+                font-size: 16pt;
+                line-height: 22pt;
+                color: $color-3;
+                margin-bottom: 5pt;
+            }
+        }
+        .section-wrapper {
+            width: $page-width;
+        }
+        .body-wrapper {
+            margin: auto;
+            float: none !important;
+            padding: 0;
+        }
+        .guide-list {
+            border: none;
+            padding: 0;
+            margin-bottom: 15pt;
+            ul {
+                &:before {
+                    margin: 10px auto 15px;
+                    width: 25pt;
+                }
+                li {
+                    margin: 10px 0;
+                }
+            }
+            .numbered_list li {
+                .number {
+                    font-size: 13pt;
+                    width: 30pt;
+                    line-height: 30pt;
+                    margin-right: 20px;
+                    color: $color-3;
+                }
+            }
+            .subhead:after {
+                display: none;
+            }
+        }
+        .step-by-step {
+            .minutes {
+                width: 40pt;
+                height: 40pt;
+                p { 
+                    font-size: 11pt; 
+                    line-height: 12pt;
+                }
+            }
+            .step {
+                margin-bottom: 10px;
+                page-break-inside: avoid;
+            }
+        }
+        .color-info {
+            border-top: 1px solid $link-blue;
+            padding: 20pt 0;
+            .subtitle {
+                font-size: 10pt;
+                line-height: 11pt;
+                margin-bottom: 10pt;
+            }
+            table {
+                td {
+                    &.col-1 {
+                        padding-right: 10pt;
+                        border-right: 1px solid $link-blue;
+                    }
+                    &.col-2 {
+                        padding-left: 10pt;
+                    }
+                }
+            }
+        }
+        .color-chart {
+            margin-bottom: 25pt; 
+            min-height: 80pt;
+            .color-list {
+                li {
+                    margin-top: 10pt;
+                    font-size: 7pt;
+                    line-height: 8pt;
+                    .color {
+                        width: 12pt;
+                        height: 7pt;
+                        margin-right: 5pt;
+                    }
+                }
+            }
+            $chart-width: 80pt;
+            $inner-chart-width: 46pt;
+            svg, .chart {
+                width: $chart-width;
+                height: $chart-width;
+            }
+            .chart {
+                top: 15pt;
+                .color-text {
+                    width: $inner-chart-width;
+                    height: $inner-chart-width;
+                    line-height: $inner-chart-width;
+                    color: $color-3;
+                    background: white;
+                    font-size: 15pt;
+                }
+            }
+        }
+        .print {
+            border-top: 1px solid $link-blue;
+            padding: 20px 0 35px;
+            .client-info {
+                display: table !important;
+                margin: auto;
+                & > li {
+                    padding: 0 20px;
+                    text-align: center;
+                    float: left;
+                    border-left: 1px solid #E8E3DC;
+                    &:last-child {
+                        float: none;
+                        top: 15px;
+                        border: none;
+                    }
+                    &:first-child {
+                        border: none;
+                        padding-left: 0;
+                    }
+                    &:nth-child(4) {
+                        padding-right: 0;
+                    }
+                }
+                .subtitle {
+                    font-size: 6pt;
+                    line-height: 8pt;
+                    margin-bottom: 2px;
+                }
+                h3 {
+                    font-size: 9pt;
+                    line-height: 11pt;
+                    color: $color-3;
+                    margin: 0;
+                }
+            }
+        }
+
+        /*CUSTOM COLOR*/
+        .custom-color {
+            .content {
+                .info {
+                    padding-left: 5pt;
+                    padding-right: 5pt;
+                    border-top: 1px solid $link-blue;
+                    display: none;
+                    a {
+                        color: $color-3;
+                    }
+                }
+            }
+            .col-1 {
+                width: 130px;
+            }
+            .guide-list {
+                .col.col-1 {
+                    padding-right: 40px;
+                }
+                .title {
+                    margin-bottom: 5px;
+                }
+            }
+            .step-by-step {
+                .minutes {
+                    top: 40px;
+                    margin-top: -20px;
+                }
+                .hair-color-icon {
+                    img {
+                        width: auto;
+                    }
+                    &.A {
+                        width: 60pt;
+                    }
+                    &.D {
+                        width: 64pt;
+                    }
+                    &.E {
+                        width: 67pt;
+                    }
+                    &.F {
+                        width: 64pt;
+                    }
+                    &.G {
+                        width: 64pt;
+                    }
+                    &.J {
+                        width: 75pt;
+                    }
+                    &.M {
+                        width: 60pt;
+                    }
+                }
+            }
+        }
+
+        /* HIGHLIGHTS */
+        .highlights {
+            .hair-highlight-icon {
+                &.A img {
+                    width: 42pt;
+                    top: -20pt;
+                }
+                &.B img {
+                    width: 57pt;
+                }
+                &.C img{
+                    width: 49pt;
+                }
+                &.D img {
+                    width: 45pt;
+                }
+                &.E img {
+                    width: 53pt;
+                    top: 44pt;
+                }
+                &.F img {
+                    width: 75pt;
+                    top: 70pt;
+                }
+                &.G img {
+                    width: 60pt;
+                }
+            }
+            .content {
+                .info {
+                    padding-top: 0;
+                    border-top: none;
+                }
+                .info, .info a {
+                    color: $color-3;
+                }
+            }
+            .step-by-step {
+                .col-2 {
+                    width: 335px;
+                }  
+            }
+            .col-1 {
+                width: 125px;
+            }
+            .guide-list {
+                ul:before {
+                    display: none;
+                }
+            }
+            .step-by-step {
+                .minutes {
+                    top: -10px;
+                }
+            }
+        }
+    }
+}
